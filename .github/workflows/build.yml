@@ -1,0 +1,23 @@
+name: Build ZIP
+
+on:
+  workflow_dispatch:
+
+jobs:
+  zip:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install zip
+      run: sudo apt-get install zip
+
+    - name: Create zip
+      run: zip -r LLM_Scientist_TURBO_LAB.zip .
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: LLM_Scientist_TURBO_LAB
+        path: LLM_Scientist_TURBO_LAB.zip
