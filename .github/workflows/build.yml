@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v3
 
     - name: Install zip
       run: sudo apt-get install zip
@@ -17,7 +17,7 @@ jobs:
       run: zip -r LLM_Scientist_TURBO_LAB.zip .
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: LLM_Scientist_TURBO_LAB
         path: LLM_Scientist_TURBO_LAB.zip
